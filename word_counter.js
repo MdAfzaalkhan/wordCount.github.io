@@ -17,16 +17,20 @@ txtInp.addEventListener("input", function () {
   txtInpValueRep = txtInpValue.replace(/ /g,""); 
   charInp.value = txtInpValueRep.length;
 
+  // new variable to count number of spaces in our text.
+  let wordCount = 0;                         
+
+  //Split the word on each space character
+  let txtInpValueSplit = txtInpValue.split(" ");    
   
-  let wordCount = 0;                                // new variable to count number of spaces in our text.
-  
-  let txtInpValueSplit = txtInpValue.split(" ");    //Split the word on each space character
-  
-  for (i = 0; i < txtInpValueSplit.length; i++) {   //loop through text and increase count
+    //loop through text and increase count
+  for (i = 0; i < txtInpValueSplit.length; i++) { 
     
-    if (txtInpValueSplit[i] != "") {                //after space if there is some txt then increase the count
+     //after space if there is some txt then increase the count
+    if (txtInpValueSplit[i] != "") {               
       wordCount += 1;
     }
   }
-  wordInp.value = wordCount;                        //show the count in word chracters input
+  //show the count in word chracters input
+  wordInp.value = wordCount;                        
 });
